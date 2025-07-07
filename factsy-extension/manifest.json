@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Factsy Fact-Check Extension",
+  "version": "1.0.0",
+  "description": "Fact-check highlighted text or any claim with Factsy.",
+  "permissions": ["contextMenus", "activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Factsy Fact-Check"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "factsy-fact-check-shortcut": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F"
+      },
+      "description": "Fact-check selected text or open Factsy popup"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ]
+} 

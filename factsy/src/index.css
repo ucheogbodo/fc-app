@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media (max-width: 600px) {
+  body, #root, .App {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw;
+    min-width: 0;
+  }
+  .App {
+    max-width: 100vw !important;
+    padding: 8px !important;
+  }
+  input, button, select {
+    font-size: 16px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  [style*='display: flex'] {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  ul {
+    padding-left: 0 !important;
+  }
+}
+
+/* Ripple effect for buttons */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background-color: rgba(80, 80, 80, 0.25);
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Card hover/active animations */
+.card-hover {
+  transition: transform 0.18s cubic-bezier(.4,2,.3,1), box-shadow 0.18s cubic-bezier(.4,2,.3,1);
+}
+.card-hover:hover, .card-hover:focus-within {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  z-index: 2;
+}
