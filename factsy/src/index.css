@@ -64,3 +64,13 @@ code {
   box-shadow: 0 6px 24px rgba(0,0,0,0.13);
   z-index: 2;
 }
+
+/* Skeleton loader animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
